@@ -2,8 +2,6 @@ import numpy as np
 import cv2
 import time
 
-
-
 def record_video(url,file_name,duration):
     # Create a VideoCapture object
     cap = cv2.VideoCapture(url)
@@ -42,12 +40,12 @@ def record_video(url,file_name,duration):
     # When everything done, release the video capture and video write objects
     cap.release()
     out.release()
+    
 
 ####------> Main Program <------####------> Main Program <------####------> Main Program <------####------> Main Program <------####------> Main Program <------####
-record_video('http://cctv-dishub.sukoharjokab.go.id/zm/cgi-bin/nph-zms?mode=jpeg&monitor=8&scale=100&maxfps=15&buffer=1000&user=user&pass=user',
-             'output.avi',
-             120)
-
-
+url = 'http://cctv-dishub.sukoharjokab.go.id/zm/cgi-bin/nph-zms?mode=jpeg&monitor=8&scale=100&maxfps=15&buffer=1000&user=user&pass=user'
+file_name = 'output.avi'
+duration = 120 # durasi in sec
+    
 # Closes all the frames
 cv2.destroyAllWindows() 
